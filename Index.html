@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Employee Registration Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+    }
+    
+    .container {
+      max-width: 500px;
+      margin: 0 auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    
+    input[type="text"], input[type="email"], select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      font-size: 16px;
+    }
+    
+    input[type="submit"] {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    
+    input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Employee Registration Form</h1>
+    <form id="employeeForm">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+      
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+      
+      <label for="phone">Phone:</label>
+      <input type="text" id="phone" name="phone" required>
+      
+      <label for="department">Department:</label>
+      <select id="department" name="department" required>
+        <option value="">Select department</option>
+        <option value="hr">Human Resources</option>
+        <option value="finance">Developer</option>
+        <option value="it">Information Technology</option>
+        <option value="marketing">Marketing</option>
+      </select>
+      
+      <label for="position">Position:</label>
+      <input type="text" id="position" name="position" required>
+      
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+
+  <script>
+    document.getElementById('employeeForm').addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent form submission
+      
+      // Get form values
+      var name = document.getElementById('name').value;
+      var email = document.getElementById('email').value;
+      var phone = document.getElementById('phone').value;
+      var department = document.getElementById('department').value;
+      var position = document.getElementById('position').value;
+      
+      // Perform validation if needed
+      // ...
+      
+      // Create an object with the form data
+      var formData = {
+        name: name,
+        email: email,
+        phone: phone,
+        department: department,
+        position: position
+      };
+      
+      // Display the form data (you can modify this part to send the data to a server)
+      console.log(formData);
+      
+      // Reset the form
+      document.getElementById('employeeForm').reset();
+    });
+  </script>
+</body>
+</html>
